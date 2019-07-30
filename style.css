@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.main {
+  /* spans whole body */
+  height: 100vh;
+  width: 100vw;
+  /* centering container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+  background-color: #708090;
+  /* background-size: 64px 128px; */
+}
+.main .container {
+  /* svg dimension: 800 * 400 */
+  width: 900px;
+  height: 560px;
+  background-color: #fff;
+  display: flex;
+  padding: 20px;
+  /* title on top of vis */
+  flex-direction: column; 
+  /* to position: absolute .visHolder*/
+  position: relative;
+}
+
+/* give container shadow when wider than 1000px */
+@media (min-width: 1000px) {
+  .main .container {
+    box-shadow: 2px 2px 20px;
+  }
+}
+
+/* style title */
+.main .container #title {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.main .container .visHolder {
+  /* in order to position overlay not worryig about 
+     containers position on screen */
+  position: relative;
+  top: 1em;
+}
+
+
+#tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* for using data scaled to the canvas
+     as an offset (starting from the cavas origin) */
+  position: absolute;
+  text-align: left;
+  width: 150px;
+  height: 50px;
+  padding: 2px;
+  font: 12px;
+  background: lightsteelblue;
+  /*  blur (3rd value) adds to the all directions */
+  box-shadow: 1px 1px 10px;
+  border-radius: 2px;
+  /* prevents mouse cursor from turning into a pointer */
+  pointer-events: none;
+}
+
+.overlay {
+  /* absolute positioning to the nearest parent 
+     with non-static position (relative | absolute) */
+  /* in this case, absolute against .visHolder */
+  position: absolute; 
+  background: rgba(5, 17, 122, 0.3);
+  pointer-events: none;
+}
+
+/* styling y & x axis */
+/* d3 axis consists of <path class="domain"...> */
+#y-axis path {
+  stroke: black;
+  stroke-width: 1;
+  fill: none;
+}
+
+#x-axis path {
+  stroke: black;
+  stroke-width: 1;
+  fill: none;
+}
+
+.bar {
+  fill: #33adff;
+}
+
+.info {
+  font-size: 0.8em;
+}
