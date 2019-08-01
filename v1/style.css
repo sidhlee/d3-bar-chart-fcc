@@ -1,0 +1,75 @@
+html {
+  box-sizing: border-box;
+  font-family: Arial, "sans-serif";
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* remove default margin and padding */
+body { margin: 0; padding: 0 }
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(130,150,190, .3);
+}
+
+header p {
+  margin-top: -15px;
+}
+
+.container {
+  position: relative;
+  top: -2em;
+  text-align: center;
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;    
+  box-shadow:  1px 2px 4px rgba(0,0,0, 0.3), 0 5px 5px rgba(0,0,0,0.3)
+}
+
+#chart {
+  position: relative;
+}
+
+.bar {
+  fill: rgb(90,170,255);
+}
+
+#overlay {
+  position: absolute;
+  background-color: white;
+}
+
+#tooltip {
+  position: absolute;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.3);
+  
+}
+
+footer {
+  position: relative;
+  top: 1em;
+  font-size: 0.9em;
+  text-align: right;
+}
+
+footer #source {
+  position: relative;
+  top: 0.5em;
+}
+
+footer #description {
+  color: #555;
+    
+}
